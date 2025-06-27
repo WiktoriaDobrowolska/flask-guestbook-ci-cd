@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Guestbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<style>
+        body {
+            background-color: #121212;
+            color: #ffb6c1;
+            font-family: 'Roboto', sans-serif;
+            padding: 40px;
+            max-width: 700px;
+            margin: auto;
+        }
+ 
+        h1, h2 {
+            color: #ff69b4;
+            text-align: center;
+        }
+ 
+        form {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px #ff69b4;
+        }
+ 
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ff69b4;
+            border-radius: 5px;
+            background-color: #2b2b2b;
+            color: #fff;
+            font-size: 16px;
+        }
+ 
+        button {
+            background-color: #ff69b4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+ 
+        button:hover {
+            background-color: #ff85c1;
+        }
+ 
+        .message {
+            background-color: #1e1e1e;
+            padding: 10px;
+            border-left: 4px solid #ff69b4;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+ 
+        .message strong {
+            color: #ffffff;
+        }
+</style>
+</head>
+<body>
+<h1>Guestbook</h1>
+<form method="post">
+<input type="text" name="name" placeholder="Your name" required>
+<textarea name="message" placeholder="Your message" required></textarea>
+<button type="submit">Submit</button>
+</form>
+ 
+    <h2>Messages</h2>
+    {% for name, message in entries %}
+<div class="message">
+<p><strong>{{ name }}</strong>: {{ message }}</p>
+</div>
+    {% endfor %}
+</body>
+</html>
