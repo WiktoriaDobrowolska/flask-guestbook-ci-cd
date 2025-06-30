@@ -1,4 +1,5 @@
 version: '3.8'
+ 
 services:
   web:
     build: .
@@ -11,11 +12,11 @@ services:
       MYSQL_PASSWORD: password
       MYSQL_DATABASE: mydb
     depends_on:
-      - db
+      - myapp_mysql
     networks:
-      - app-network
+      - mynet
  
-  db:
+  myapp_mysql:
     image: mysql:5.7
     container_name: myapp_mysql
     restart: always
@@ -27,10 +28,26 @@ services:
     volumes:
       - app_mysql_data:/var/lib/mysql
     networks:
-      - app-network
+      - mynet
+ 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: myapp_mysql
+      PMA_PORT: 3306
+    ports:
+      - "8080:80"
+    depends_on:
+      - myapp_mysql
+    networks:
+      - mynet
  
 networks:
-  app-network:
+  mynet:
+    external: true
  
 volumes:
   app_mysql_data:
+
