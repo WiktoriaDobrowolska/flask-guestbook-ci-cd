@@ -1,6 +1,6 @@
-# 📘 MyApp – Wiktoria i Marta
+# 📘 **Guestbook** – Wiktoria i Marta
 
-**MyApp** to prosta aplikacja internetowa typu **Guestbook**, stworzona przy użyciu **Flask** i **MySQL**.  
+**Guestbook** to prosta aplikacja internetowa, stworzona przy użyciu **Flask** i **MySQL**.  
 Umożliwia użytkownikom wpisywanie swojego imienia oraz wiadomości, które następnie wyświetlają się poniżej formularza.
 
 ---
