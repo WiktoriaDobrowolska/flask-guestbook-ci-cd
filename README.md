@@ -7,19 +7,18 @@ Umożliwia użytkownikom wpisywanie swojego imienia oraz wiadomości, które nas
 
 ## Spis treści
 
-- [Funkcjonalności](#funkcjonalności)  
+- [Funkcjonalności](#funkcjonalność)  
 - [Wymagania](#wymagania)  
 - [Instalacja](#instalacja)  
 - [Uruchamianie aplikacji](#uruchamianie-aplikacji)  
 - [Testowanie](#testowanie)  
 ---
 
-## Funkcjonalności
+## Funkcjonalność
 
 - 📝 Formularz do wpisywania **imienia** i **wiadomości**  
 - 📜 Wyświetlanie listy wpisów z imionami i wiadomościami  
-- 💾 Dane przechowywane w bazie **MySQL**  
-- ⚙️ Konfiguracja środowiska przez plik `.env`  
+- 💾 Dane przechowywane w bazie **MySQL**    
 - 🚀 Integracja z GitHub Actions (CI)  
 
 ---
