@@ -10,7 +10,7 @@ Umożliwia użytkownikom wpisywanie swojego imienia oraz wiadomości, które nas
 - [Funkcjonalności](#funkcjonalności)  
 - [Wymagania](#wymagania)  
 - [Instalacja](#instalacja)  
-  - [Uruchamianie aplikacji](#uruchamianie-aplikacji)  
+- [Uruchamianie aplikacji](#uruchamianie-aplikacji)  
 - [Testowanie](#testowanie)  
 ---
 
