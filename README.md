@@ -86,7 +86,8 @@ Aby ułatwić uruchomienie aplikacji razem z bazą danych, dołączony jest plik
 
 Po wykonaniu tych kroków aplikacja będzie dostępna pod adresem `http://localhost:5001`.
 
-🔧 Jeśli używasz zewnętrznej sieci Docker o nazwie mynet (zdefiniowanej w docker-compose.yml), upewnij się, że została wcześniej utworzona:
+
+PS 🔧 Jeśli używasz zewnętrznej sieci Docker o nazwie mynet (zdefiniowanej w docker-compose.yml), upewnij się, że została wcześniej utworzona:
 ```bash
 docker network create mynet
 ```
