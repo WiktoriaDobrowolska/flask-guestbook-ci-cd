@@ -12,8 +12,6 @@ Umożliwia użytkownikom wpisywanie swojego imienia oraz wiadomości, które nas
 - [Instalacja](#instalacja)  
   - [Uruchamianie aplikacji](#uruchamianie-aplikacji)  
 - [Testowanie](#testowanie)  
-- [Licencja](#licencja)
-
 ---
 
 ## Funkcjonalności
