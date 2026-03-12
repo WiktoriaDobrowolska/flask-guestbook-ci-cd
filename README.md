@@ -1,60 +1,67 @@
-# 📘 **Guestbook** – Wiktoria i Marta
+# 📘 **Guestbook** – Wiktoria & Marta
 
-**Guestbook** to prosta aplikacja internetowa, stworzona przy użyciu **Flask** i **MySQL**.  
-Umożliwia użytkownikom wpisywanie swojego imienia oraz wiadomości, które następnie wyświetlają się poniżej formularza.
-
----
-
-## Spis treści
-
-- [Funkcjonalności](#funkcjonalność)  
-- [Wymagania](#wymagania)  
-- [Instalacja](#instalacja)  
-- [Uruchamianie aplikacji](#uruchamianie-aplikacji)  
-- [Testowanie](#testowanie)  
----
-
-## Funkcjonalność
-
-- 📝 Formularz do wpisywania **imienia** i **wiadomości**  
-- 📜 Wyświetlanie listy wpisów z imionami i wiadomościami  
-- 💾 Dane przechowywane w bazie **MySQL**    
-- 🚀 Integracja z GitHub Actions (CI)  
+**Guestbook** is a simple web application created using **Flask** and **MySQL**.  
+It allows users to enter their name and a message, which are then displayed below the form.
 
 ---
 
-## Wymagania
+## Table of Contents
 
-- Python 3.8 lub nowszy  
+- [Features](#features)  
+- [Requirements](#requirements)  
+- [Installation](#installation)  
+- [Installation with Docker](#installation-with-docker)
+- [Testing](#testing)  
+
+---
+
+## Features
+
+- 📝 Form for entering a **name** and **message** 
+- 📜 Displaying a list of entries with names and messages  
+- 💾 Data stored in a **MySQL** database    
+- 🚀 Integration with GitHub Actions (CI)  
+
+---
+
+## Requirements
+
+- Python 3.8 or newer  
 - pip  
-- MySQL (lokalnie lub w kontenerze Docker)  
-- virtualenv (opcjonalnie)  
-- Docker (jeśli chcesz uruchomić bazę w kontenerze)  
+- MySQL (locally or in a Docker container)  
+- virtualenv (optional)  
+- Docker (if you want to run the database in a container)  
 
 ---
 
-## Instalacja
+## Installation
 
-1. Sklonuj repozytorium:
+1. Clone the repository:
 
 ```bash
-git clone git@github.com:twoja_nazwa/myapp.git
+git clone git@github.com:your_username/myapp.git
 cd myapp
 ```
-2. Zainstaluj zależność:
+
+2. Install dependencies:
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
-3. Uruchom MySQL w Dockerze:
+
+3. Run MySQL in Docker:
    
 ```bash
-docker run --name myapp-mysql -e MYSQL_ROOT_PASSWORD=rootpassword -e MYSQL_DATABASE=myapp -p 3306:3306 -d mysql:latest
+docker run --name myapp-mysql -e
+MYSQL_ROOT_PASSWORD=rootpassword -e
+MYSQL_DATABASE=myapp -p 3306:3306 -d mysql:latest
 ```
-4. Stwórz plik .env i skonfiguruj go.
-5. Uruchom aplikację:
+
+4. Create an `.env` file and configure it.
+
+5. Run the application:
    
 ```bash
 export FLASK_APP=app.py      
@@ -64,49 +71,43 @@ flask run --host=0.0.0.0 --port=5001
 
 ---
 
-## Instalacja z Dockerem
+## Installation with Docker
 
-Aby ułatwić uruchomienie aplikacji razem z bazą danych, dołączony jest plik `docker-compose.yml`, który automatycznie zbuduje i odpali wszystkie potrzebne usługi w trybie produkcyjnym.
+To make it easier to run the application along with the database, a `docker-compose.yml` file is included, which will automatically build and start all necessary services in production mode.
 
-1. Upewnij się, że masz zainstalowane i działające **Docker** oraz **Docker Compose**.
+1. Make sure you have **Docker** and **Docker Compose** installed and running.
 
-2. Utwórz plik `.env` na podstawie `.env.example` i skonfiguruj w nim zmienne środowiskowe.
+2. Create an `.env` file based on `.env.example` and configure the environment variables in it.
 
-3. W terminalu przejdź do katalogu, w którym znajduje się plik `docker-compose.yml` (np. katalog `app`):
+3. In the terminal, navigate to the directory where the `docker-compose.yml` file is located (e.g., the `app` directory):
 
    ```bash
    cd app
    ```
 
-4. Uruchom aplikację i bazę danych poleceniem:
+4. Run the application and database with the command:
 
    ```bash
    docker-compose up --build
    ```
 
-Po wykonaniu tych kroków aplikacja będzie dostępna pod adresem `http://localhost:5001`.
+After completing these steps, the application will be available at `http://localhost:5001`.
 
 
-PS 🔧 Jeśli używasz zewnętrznej sieci Docker o nazwie mynet (zdefiniowanej w docker-compose.yml), upewnij się, że została wcześniej utworzona:
+*PS* 🔧 If you are using an external Docker network named `mynet` (defined in `docker-compose.yml`), make sure it has been created beforehand:
 ```bash
 docker network create mynet
 ```
-Tę komendę należy wykonać tylko raz, przed pierwszym uruchomieniem aplikacji.
-Jeśli sieć już istnieje, nie trzeba robić tego ponownie.
-
+This command only needs to be executed once, before running the application for the first time. If the network already exists, you do not need to do this again.
 
 ---
-## Testowanie
 
-Aby uruchomić testy aplikacji, wykonaj w terminalu następujące polecenie:
+## Testing
+
+To run the application tests, execute the following command in the terminal:
 
 ```bash
 pytest
 ```
 
-Upewnij się, że masz aktywne środowisko wirtualne (`venv`) i zainstalowane wszystkie zależności przed uruchomieniem testów.
-
----
-
-
-
+Make sure you have the virtual environment (`venv`) activated and all dependencies installed before running the tests.
